@@ -406,5 +406,7 @@ table {
 
 /* line 1, ../../scss/base/_layout.scss */
 body {
-  background: red;
+  margin: 0;
+  padding: 0;
+  background: #f8e2cf;
 }
