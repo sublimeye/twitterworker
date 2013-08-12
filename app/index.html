@@ -3,52 +3,49 @@
 <head>
 	<meta charset="utf-8">
 	<title>Twitter-Yaye</title>
-
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/index.css"/>
-
 	<!-- JS -->
+	<script src="js/libs/jquery-1.8.1.js"></script>
 	<script src="js/libs/underscore.js"></script>
 	<script src="js/libs/backbone.js"></script>
 	<script src="js/libs/handlebars.js"></script>
-	<script src="js/libs/jquery-1.8.1.js"></script>
-
+	<script src="js/modules/localStorage.js"></script>
 </head>
 <body>
 
-<section class="feed">
+<!-- Our App simple HTML structure -->
+<section class="l-feed js-feed g-loader"></section>
+<section class="l-favorites js-favorites"></section>
+
+<!-- Templates -->
+<script id="tmpl-tweet" type="text/html">
 	<article class="tweet">
-		<img class="tweet-avatar" src="img/Logo_Ciklum_Empowering_Collaboration_180by180_normal.jpg" />
-		<div class="tweet-author">Ciklum</div>
-		<p class="tweet-text">Mobile In Brazil, India And China — Tracking The Next Massive Growth Wave In Smartphones http://t.co/R6EJ4osD9N via @sai</p>
-		<span class="tweet-date">05 Aug 2012</span>
+		<div class="tweet-avatar">
+			<img src="<%= user.profile_image_url %>"/>
+		</div>
 
-		<div class="tweet-add_favorite">Add</div>
+		<div class="tweet-content">
+			<div class="tweet-author"><%= user.name %></div>
+			<p class="tweet-text"><%= text %></p>
+			<span class="tweet-date"><%= created_at %></span>
+
+			<button class="btn-tweet_action js-process-favorite-button">
+				<% if (!isFavorite) { %>Add<% } else { %>Remove<% } %>
+			</button>
+		</div>
 	</article>
+</script>
 
-	<article class="tweet">
-		<img class="tweet-avatar" src="img/Logo_Ciklum_Empowering_Collaboration_180by180_normal.jpg" />
-		<div class="tweet-author">Ciklum</div>
-		<p class="tweet-text">Tracking The Next Massive Growth Wave In Smartphones http://t.co/R6EJ4osD9N via @sai</p>
-		<span class="tweet-date">05 Aug 2012</span>
+<!-- Backbone entities -->
+<script src="js/models/tweet.js"></script>
+<script src="js/collections/feed.js"></script>
+<script src="js/collections/favorites.js"></script>
+<script src="js/views/tweet.js"></script>
+<script src="js/views/favorites.js"></script>
+<script src="js/views/feed.js"></script>
 
-		<div class="tweet-add_favorite">Add</div>
-	</article>
-</section>
-
-<section class="favorites">
-	<article class="tweet">
-		<img class="tweet-avatar" src="img/Logo_Ciklum_Empowering_Collaboration_180by180_normal.jpg" />
-		<div class="tweet-author">Ciklum</div>
-		<p class="tweet-text">Something about us!</p>
-		<span class="tweet-date">05 Aug 2012</span>
-
-		<div class="tweet-remove_favorite">Remove</div>
-	</article>
-
-</section>
-
-<!-- DOMReady JS -->
+<!-- Launch App -->
 <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,5 +1,13 @@
 body {
 	margin: 0;
 	padding:0;
-	background: #f8e2cf;
+}
+
+.l-feed, .l-favorites {
+	float: left;
+	width: 50%;
+}
+
+.l-feed {
+	min-height: 200px;
 }

@@ -42,7 +42,8 @@ function onRequest (request, response) {
 	When request DATA is ready, make request to twitter
 	 */
 	request.on('end', function () {
-		requestData = requestData && JSON.parse(requestData);
+//		requestData = requestData && JSON.parse(requestData);
+		requestData = requestData ? JSON.parse(requestData) : {screen_name: 'ciklum', count: 20};
 		console.log('Request Data: ', requestData);
 		console.log('Getting Twitter data');
 

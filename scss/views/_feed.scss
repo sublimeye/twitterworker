@@ -1,0 +1,30 @@
+.tweet {
+	.tweet-avatar {
+		float: left;
+	}
+
+	.tweet-content {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.tweet-date {
+		position: absolute;
+		right: 5%;
+		top: 2%;
+	}
+
+	.btn-tweet_action {
+		display: inline-block;
+		border: 1px solid #efefef;
+		padding: 10px;
+
+		&:hover {
+			background: #ccc;
+		}
+
+		&[disabled=disabled] {
+			background: #ccc;
+		}
+	}
+}

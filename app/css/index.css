@@ -408,5 +408,45 @@ table {
 body {
   margin: 0;
   padding: 0;
-  background: #f8e2cf;
+}
+
+/* line 6, ../../scss/base/_layout.scss */
+.l-feed, .l-favorites {
+  float: left;
+  width: 50%;
+}
+
+/* line 11, ../../scss/base/_layout.scss */
+.l-feed {
+  min-height: 200px;
+}
+
+/* line 2, ../../scss/views/_feed.scss */
+.tweet .tweet-avatar {
+  float: left;
+}
+/* line 6, ../../scss/views/_feed.scss */
+.tweet .tweet-content {
+  position: relative;
+  overflow: hidden;
+}
+/* line 11, ../../scss/views/_feed.scss */
+.tweet .tweet-date {
+  position: absolute;
+  right: 5%;
+  top: 2%;
+}
+/* line 17, ../../scss/views/_feed.scss */
+.tweet .btn-tweet_action {
+  display: inline-block;
+  border: 1px solid #efefef;
+  padding: 10px;
+}
+/* line 22, ../../scss/views/_feed.scss */
+.tweet .btn-tweet_action:hover {
+  background: #ccc;
+}
+/* line 26, ../../scss/views/_feed.scss */
+.tweet .btn-tweet_action[disabled=disabled] {
+  background: #ccc;
 }
