@@ -1,6 +1,14 @@
 .tweet {
-	.tweet-avatar {
+	width: 200px;
+	display: inline-block;
+	font-size: 12px;
+	vertical-align: top;
+	margin: 0 2% 2% 0;
+	
+	.tweet-meta-column {
 		float: left;
+		width: 48px;
+		margin-right: 10px;
 	}
 
 	.tweet-content {
@@ -9,22 +17,48 @@
 	}
 
 	.tweet-date {
-		position: absolute;
-		right: 5%;
-		top: 2%;
+		display: inline-block;
 	}
 
 	.btn-tweet_action {
 		display: inline-block;
-		border: 1px solid #efefef;
+		position: relative;
+		width: 50px;
+		height: 50px;
 		padding: 10px;
+		border: none;
+		background: none;
 
-		&:hover {
-			background: #ccc;
+		&:hover.btn-add:before {
+			@include transform(scale(1.5));
 		}
 
-		&[disabled=disabled] {
-			background: #ccc;
+		&[disabled=disabled].btn-add:before {
+			display: none;
+		}
+
+		&.btn-add:before, &.btn-remove:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '\2665';
+			font-size: 4em;
+			line-height: 1em;
+			width: 50px;
+			height: 50px;
+			vertical-align: center;
+			text-align: center;
+			color: rgb(230, 23, 23);
+			@include transition(all .3s);
+
+		}
+
+		&.btn-add:before {
+			color: #FFC8C8;
+			font-size: 3em;
+		}
+
+		&.btn-add:after {
 		}
 	}
 }

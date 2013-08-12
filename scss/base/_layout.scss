@@ -1,13 +1,29 @@
+$feedColumnWidth: 70%;
+
 body {
 	margin: 0;
 	padding:0;
 }
 
-.l-feed, .l-favorites {
-	float: left;
-	width: 50%;
+/*
+	Global styles
+*/
+
+.g-loader {
+	background: url("../img/loader.gif") no-repeat center;
 }
 
+
+.l-feed, .l-favorites {
+	float: left;
+}
+
+
 .l-feed {
+	width: $feedColumnWidth;
 	min-height: 200px;
+}
+
+.l-favorites {
+	width: 100% - $feedColumnWidth;
 }

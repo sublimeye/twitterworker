@@ -15,6 +15,9 @@ var app = app || {};
 		},
 
 		initialize: function() {
+			var dateString = new Date(this.get('created_at'));
+			this.set('date', dateString.toLocaleDateString());
+
 			this.listenTo(this, 'change:isFavorite', this.updateFavoritesCollection);
 		},
 

@@ -15,10 +15,12 @@ var app = app || {};
 	'use strict';
 
 	app.TweetView = Backbone.View.extend({
+		tagName: 'article',
+		className: 'tweet',
 		actionButton: null,
 		template: _.template( $('#tmpl-tweet').html() ),
 		events: {
-			'click .js-process-favorite-button': 'processFavoriteButton'
+			'click .js-manage-favorite': 'manageFavorite'
 		},
 
 		initialize: function() {

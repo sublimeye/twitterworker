@@ -20,21 +20,15 @@
 
 <!-- Templates -->
 <script id="tmpl-tweet" type="text/html">
-	<article class="tweet">
-		<div class="tweet-avatar">
+		<div class="tweet-meta-column">
 			<img src="<%= user.profile_image_url %>"/>
+			<div class="tweet-date"><%= date %></div>
 		</div>
 
 		<div class="tweet-content">
-			<div class="tweet-author"><%= user.name %></div>
 			<p class="tweet-text"><%= text %></p>
-			<span class="tweet-date"><%= created_at %></span>
-
-			<button class="btn-tweet_action js-process-favorite-button">
-				<% if (!isFavorite) { %>Add<% } else { %>Remove<% } %>
-			</button>
+			<button class="btn-tweet_action js-manage-favorite <% if (!isFavorite) { %>btn-add<% } else { %>btn-remove<% } %>"></button>
 		</div>
-	</article>
 </script>
 
 <!-- Backbone entities -->

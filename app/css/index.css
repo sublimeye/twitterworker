@@ -404,49 +404,101 @@ table {
   border-spacing: 0;
 }
 
-/* line 1, ../../scss/base/_layout.scss */
+/* line 3, ../../scss/base/_layout.scss */
 body {
   margin: 0;
   padding: 0;
 }
 
-/* line 6, ../../scss/base/_layout.scss */
-.l-feed, .l-favorites {
-  float: left;
-  width: 50%;
+/*
+	Global styles
+*/
+/* line 12, ../../scss/base/_layout.scss */
+.g-loader {
+  background: url("../img/loader.gif") no-repeat center;
 }
 
-/* line 11, ../../scss/base/_layout.scss */
+/* line 17, ../../scss/base/_layout.scss */
+.l-feed, .l-favorites {
+  float: left;
+}
+
+/* line 22, ../../scss/base/_layout.scss */
 .l-feed {
+  width: 70%;
   min-height: 200px;
 }
 
-/* line 2, ../../scss/views/_feed.scss */
-.tweet .tweet-avatar {
-  float: left;
+/* line 27, ../../scss/base/_layout.scss */
+.l-favorites {
+  width: 30%;
 }
-/* line 6, ../../scss/views/_feed.scss */
+
+/* line 1, ../../scss/views/_feed.scss */
+.tweet {
+  width: 200px;
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: top;
+  margin: 0 2% 2% 0;
+}
+/* line 8, ../../scss/views/_feed.scss */
+.tweet .tweet-meta-column {
+  float: left;
+  width: 48px;
+  margin-right: 10px;
+}
+/* line 14, ../../scss/views/_feed.scss */
 .tweet .tweet-content {
   position: relative;
   overflow: hidden;
 }
-/* line 11, ../../scss/views/_feed.scss */
+/* line 19, ../../scss/views/_feed.scss */
 .tweet .tweet-date {
-  position: absolute;
-  right: 5%;
-  top: 2%;
+  display: inline-block;
 }
-/* line 17, ../../scss/views/_feed.scss */
+/* line 23, ../../scss/views/_feed.scss */
 .tweet .btn-tweet_action {
   display: inline-block;
-  border: 1px solid #efefef;
+  position: relative;
+  width: 50px;
+  height: 50px;
   padding: 10px;
+  border: none;
+  background: none;
 }
-/* line 22, ../../scss/views/_feed.scss */
-.tweet .btn-tweet_action:hover {
-  background: #ccc;
+/* line 32, ../../scss/views/_feed.scss */
+.tweet .btn-tweet_action:hover.btn-add:before {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
 }
-/* line 26, ../../scss/views/_feed.scss */
-.tweet .btn-tweet_action[disabled=disabled] {
-  background: #ccc;
+/* line 36, ../../scss/views/_feed.scss */
+.tweet .btn-tweet_action[disabled=disabled].btn-add:before {
+  display: none;
+}
+/* line 40, ../../scss/views/_feed.scss */
+.tweet .btn-tweet_action.btn-add:before, .tweet .btn-tweet_action.btn-remove:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '\2665';
+  font-size: 4em;
+  line-height: 1em;
+  width: 50px;
+  height: 50px;
+  vertical-align: center;
+  text-align: center;
+  color: #e61717;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 56, ../../scss/views/_feed.scss */
+.tweet .btn-tweet_action.btn-add:before {
+  color: #FFC8C8;
+  font-size: 3em;
 }

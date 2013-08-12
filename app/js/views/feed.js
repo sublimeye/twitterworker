@@ -14,11 +14,13 @@ var app = app || {};
 
 		initialize: function () {
 			this.listenTo(app.feed, 'sync', this.render);
+			this.listenTo(app.feed, 'sync', this.removeLoader);
 			this.listenTo(app.favorites, 'remove', this.makeFavorite)
 		},
 
 		render: function(collection) {
 			_.each(collection.models, function(item) {
+
 				var itemView = new app.TweetView({
 					model: item,
 					collection: app.feed
@@ -38,6 +40,10 @@ var app = app || {};
 		makeFavorite: function(model) {
 			var tweet = app.feed.get(model.id);
 			tweet && tweet.set('isFavorite', false);
+		},
+
+		removeLoader: function() {
+			this.$el.removeClass('g-loader')
 		}
 
 	});
