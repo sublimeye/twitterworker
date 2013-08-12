@@ -10,9 +10,9 @@ body {
 */
 
 .g-loader {
+	min-height: 100px;
 	background: url("../img/loader.gif") no-repeat center;
 }
-
 
 .l-feed, .l-favorites {
 	float: left;
@@ -20,10 +20,16 @@ body {
 
 
 .l-feed {
+	box-sizing: border-box;
 	width: $feedColumnWidth;
 	min-height: 200px;
+	padding-right: 30px;
 }
 
 .l-favorites {
 	width: 100% - $feedColumnWidth;
+}
+
+.l-feed h1, .l-favorites h1 {
+	font-size: 20px;
 }

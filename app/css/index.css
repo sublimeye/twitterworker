@@ -415,6 +415,7 @@ body {
 */
 /* line 12, ../../scss/base/_layout.scss */
 .g-loader {
+  min-height: 100px;
   background: url("../img/loader.gif") no-repeat center;
 }
 
@@ -425,13 +426,20 @@ body {
 
 /* line 22, ../../scss/base/_layout.scss */
 .l-feed {
+  box-sizing: border-box;
   width: 70%;
   min-height: 200px;
+  padding-right: 30px;
 }
 
-/* line 27, ../../scss/base/_layout.scss */
+/* line 29, ../../scss/base/_layout.scss */
 .l-favorites {
   width: 30%;
+}
+
+/* line 33, ../../scss/base/_layout.scss */
+.l-feed h1, .l-favorites h1 {
+  font-size: 20px;
 }
 
 /* line 1, ../../scss/views/_feed.scss */

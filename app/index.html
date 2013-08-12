@@ -15,8 +15,14 @@
 <body>
 
 <!-- Our App simple HTML structure -->
-<section class="l-feed js-feed g-loader"></section>
-<section class="l-favorites js-favorites"></section>
+<section class="l-feed">
+	<h1>20 Latests Twitter posts @Ciklum</h1>
+	<div class="js-feed g-loader"></div>
+</section>
+<section class="l-favorites">
+	<h1>Favorite items</h1>
+	<div class="js-favorites"></div>
+</section>
 
 <!-- Templates -->
 <script id="tmpl-tweet" type="text/html">
@@ -30,6 +36,15 @@
 			<button class="btn-tweet_action js-manage-favorite <% if (!isFavorite) { %>btn-add<% } else { %>btn-remove<% } %>"></button>
 		</div>
 </script>
+
+<script id="tmpl-connection-error" type="text/html">
+	<h2>Connection Error</h2>
+	<p>Can't connect to local server (localhost:8080).</p>
+	<p>You must launch local server to run this app properly.</p>
+	<p>Please execute <code>/server/run.bat</code>, or run <code>/server/node index.js</code> in cmd.</p>
+	<p>NodeJs must be installed on your machine. <a href="http://nodejs.org/download/">Download Node</a></p>
+</script>
+
 
 <!-- Backbone entities -->
 <script src="js/models/tweet.js"></script>

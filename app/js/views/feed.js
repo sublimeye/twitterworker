@@ -15,6 +15,7 @@ var app = app || {};
 		initialize: function () {
 			this.listenTo(app.feed, 'sync', this.render);
 			this.listenTo(app.feed, 'sync', this.removeLoader);
+			this.listenTo(app.feed, 'error', this.showHelper);
 			this.listenTo(app.favorites, 'remove', this.makeFavorite)
 		},
 
@@ -44,6 +45,11 @@ var app = app || {};
 
 		removeLoader: function() {
 			this.$el.removeClass('g-loader')
+		},
+
+		showHelper: function() {
+			this.removeLoader();
+			this.$el.append( $('#tmpl-connection-error').html() );
 		}
 
 	});
